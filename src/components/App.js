@@ -1,23 +1,34 @@
-import logo from '../images/logo.svg';
+import { useState, useEffect } from 'react';
 import '../styles/App.scss';
+import getDataApi from '../services/getDataApi';
 
 function App() {
+
+  const [characterData, setCharacterData] = useState({
+    name: '',
+    species: '',
+    gender:'' ,
+    house: '' ,
+    alive: '' ,
+    image: '' ,
+    othername: '',
+  })
+
+  useEffect(()=>{
+    getDataApi()
+    .then((dataFromApi)=>{
+      console.log(dataFromApi);
+      setCharacterData(dataFromApi)
+    });
+  }, [])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header>
+        <h1>Harry Potter's characters</h1>
       </header>
+      <main>
+      </main>
     </div>
   );
 }

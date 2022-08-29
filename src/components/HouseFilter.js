@@ -6,7 +6,7 @@ const HouseFilter = (props)=>{
 
     return (
         <>
-        <label for="houseFilter"> House filter</label>
+        <label htmlFor="houseFilter"> House filter</label>
             <select name="houseFilter" id="houseFilter" 
             value={props.filterByHouse}
             onChange={handleFilterHouse}>

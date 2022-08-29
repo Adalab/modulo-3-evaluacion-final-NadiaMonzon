@@ -5,7 +5,7 @@ const NameFilter=(props)=>{
 
     return (
         <>
-        <label for=""> Write and search for your favourite character</label>
+        <label htmlFor=""> Write and search for your favourite character</label>
         <input type="text" placeholder="Ej: Hermione Granger" value={props.filterByName} onChange={handleSearch}/>
         </>
         

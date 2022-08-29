@@ -7,7 +7,7 @@ import Logo from "../images/harrypotterlogo.png";
 const CharacterCard = (props)=>{
     return (
         <li>
-                <a href="">
+                <a href="adalab.es">
                     <img src={
                     (props.character.image==='' && props.character.house === 'Gryffindor' ? Gryffindor : props.character.image) ||
                     (props.character.image==='' && props.character.house === 'Hufflepuff' ? Hufflepuff : props.character.image) ||
@@ -15,7 +15,7 @@ const CharacterCard = (props)=>{
                     (props.character.image==='' && props.character.house === 'Ravenclaw' ? Ravenclaw : props.character.image) ||
                     (props.character.image==='' && props.character.house === '' ? Logo : props.character.image)
                 } 
-                    alt={`${props.character.name}'s image`} title={`${props.character.name}'s image`} className='profile_picture'/>
+                    alt={`${props.character.name}'s snapshot`} title={`${props.character.name}'s picture`} className='profile_picture'/>
                     <h3 className='profile_name'>{props.character.name}</h3>
                     <h5 className='profile_species'>{props.character.species}</h5>
                 </a>

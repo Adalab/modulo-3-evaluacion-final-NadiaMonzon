@@ -2,7 +2,8 @@ import '../styles/CharacterList.scss'
 import CharacterCard from './CharacterCard';
 
 const CharacterList = (props)=>{
-    const characterItem = props.characterData.map((character)=>{
+    const characterItem = props.character
+    .map((character)=>{
         return (
             <CharacterCard character={character}/>
             )
@@ -17,3 +18,5 @@ const CharacterList = (props)=>{
 }
 
 export default CharacterList;
+
+

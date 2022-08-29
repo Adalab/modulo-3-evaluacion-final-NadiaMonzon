@@ -9,6 +9,7 @@ import Filter from './Filters';
 function App() {
 
   const [characterData, setCharacterData] = useState([])
+  const [filterByName, setFilterByName] = useState('')
   const [filterByHouse, setFilterByHouse] =useState('Gryffindor')
 
   useEffect(()=>{
@@ -23,9 +24,17 @@ function App() {
       setFilterByHouse(value)
     }
 
+    const handleFilterName=(value)=>{
+      setFilterByName(value)
+    }
 
-    const characterFilters= characterData.filter((character)=>{
+
+    const characterFilters= characterData
+    .filter((character)=>{
       return filterByHouse === 'all' ? true : character.house === filterByHouse;   
+    })
+    .filter((character)=>{
+      return character.name.toLowerCase().includes(filterByName.toLowerCase())
     });
 
 
@@ -37,7 +46,11 @@ function App() {
       <main>
         <Filter 
         filterByHouse={filterByHouse} 
-        handleFilterHouse={handleFilterHouse}/>
+        handleFilterHouse={handleFilterHouse}
+        
+        filterByName={filterByName}
+        handleFilterName={handleFilterName}
+        />
 
         <CharacterList character={characterFilters}/>
       </main>

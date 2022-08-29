@@ -4,7 +4,9 @@ import HouseFilter from './HouseFilter';
 const Filter =(props)=>{
     return (
         <form>
-          <NameFilter/>
+          <NameFilter
+          filterByName={props.filterByName}
+          handleFilterName={props.handleFilterName} />
           <HouseFilter 
           filterByHouse={props.filterByHouse} 
           handleFilterHouse={props.handleFilterHouse}/>

@@ -10,11 +10,11 @@ const HouseFilter = (props)=>{
             <select name="houseFilter" id="houseFilter" 
             value={props.filterByHouse}
             onChange={handleFilterHouse}>
+                <option value="all">All houses</option>
                 <option value="Gryffindor">Gryffindor</option>
                 <option value="Slytherin">Slytherin</option>
                 <option value="Ravenclaw">Ravenclaw</option>
                 <option value="Hufflepuff">Hufflepuff</option>
-                <option value="all">All houses</option>
                 <option value="">Unknown</option>
             </select>
         </>

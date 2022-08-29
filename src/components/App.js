@@ -1,18 +1,12 @@
 import { useState, useEffect } from 'react';
 import '../styles/App.scss';
+import '../styles/Reset.scss'
 import getDataApi from '../services/getDataApi';
+import CharacterList from './CharacterList';
 
 function App() {
 
-  const [characterData, setCharacterData] = useState({
-    name: '',
-    species: '',
-    gender:'' ,
-    house: '' ,
-    alive: '' ,
-    image: '' ,
-    othername: '',
-  })
+  const [characterData, setCharacterData] = useState([])
 
   useEffect(()=>{
     getDataApi()
@@ -28,6 +22,7 @@ function App() {
         <h1>Harry Potter's characters</h1>
       </header>
       <main>
+        <CharacterList characterData={characterData}/>
       </main>
     </div>
   );

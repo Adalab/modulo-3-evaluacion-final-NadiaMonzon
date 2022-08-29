@@ -1,0 +1,15 @@
+.profile{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap:30px;
+    &_picture{
+        height: 350px;
+
+    }
+    &_name{
+
+    }
+    &_species{
+
+    }
+}

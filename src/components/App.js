@@ -65,7 +65,7 @@ function App() {
             handleFilterName={handleFilterName}
             />
 
-            <CharacterList character={characterFilters}/>
+            <CharacterList character={characterFilters} filterByName={filterByName}/>
           </>
         }/>
 

@@ -3,11 +3,12 @@ import Hufflepuff from "../images/hufflepufflogo.jpg";
 import Slytherin from "../images/slytherinlogo.jpg";
 import Ravenclaw from "../images/ravenclawlogo.jpg";
 import Logo from "../images/harrypotterlogo.png";
+import { Link } from "react-router-dom";
 
 
 const CharacterDetail =(props)=>{
     return (
-        
+        <>
         <section>
             <img src={
                     (props.characterFound.image==='' && props.characterFound.house === 'Gryffindor' ? Gryffindor : props.characterFound.image) ||
@@ -17,13 +18,17 @@ const CharacterDetail =(props)=>{
                     (props.characterFound.image==='' && props.characterFound.house === '' ? Logo : props.characterFound.image)
                 } 
                     alt={`${props.characterFound.name}'s snapshot`} title={`${props.characterFound.name}'s picture`}/>
-                    <h3>{props.characterFound.name}</h3>
-                    <p>{`Species: ${props.characterFound.species}`}</p>
-                    <p>{`Gender: ${props.characterFound.gender}`}</p>
-                    <p>{props.characterFound.alive ? 'Status: alive :)' : 'Status: dead x.x'}</p>
-                    <p>{`${props.characterFound.othername}`}</p>
-                    <p>{`House: ${props.characterFound.house}`}</p>    
-                </section>
+            <h3>{props.characterFound.name}</h3>
+            <h4>{`${props.characterFound.othername}`}</h4>
+            <p>{`Species: ${props.characterFound.species}`}</p>
+            <p>{`Gender: ${props.characterFound.gender}`}</p>
+            <p>{props.characterFound.alive ? 'Status: alive :)' : 'Status:dead x.x'}</p>
+            <p>{props.characterFound.house=== '' ? 'House: none' : `House: ${props.characterFound.house}`}</p> 
+              
+        </section>
+        <Link to='/'>Get back to the list</Link>
+        </>
+
     )
 }
 

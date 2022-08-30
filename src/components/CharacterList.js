@@ -9,11 +9,18 @@ const CharacterList = (props)=>{
             )
     
     });
+    const renderErrorMsg =()=>{
+        if (characterItem.length===0) {
+            return (
+            <p>{`Curiosity is not a sin, Harry, but we must be cautious with it.${props.filterByName} didn't show up in this search, try again.`} </p>)
+        }
+    }
     return (
     <section>
         <ul className='profile'>
             {characterItem}
         </ul>
+        {renderErrorMsg()}
     </section>)
 }
 

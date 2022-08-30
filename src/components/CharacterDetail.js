@@ -3,10 +3,12 @@ import Hufflepuff from "../images/hufflepufflogo.jpg";
 import Slytherin from "../images/slytherinlogo.jpg";
 import Ravenclaw from "../images/ravenclawlogo.jpg";
 import Logo from "../images/harrypotterlogo.png";
-import { Link } from "react-router-dom";
 
 
 const CharacterDetail =(props)=>{
+    const handleBackButton=()=>{
+        window.history.back();
+    }
     return (
         <>
         <section>
@@ -26,7 +28,7 @@ const CharacterDetail =(props)=>{
             <p>{props.characterFound.house=== '' ? 'House: none' : `House: ${props.characterFound.house}`}</p> 
               
         </section>
-        <Link to='/'>Get back to the list</Link>
+        <button onClick={handleBackButton}>Get back to the list</button>
         </>
 
     )

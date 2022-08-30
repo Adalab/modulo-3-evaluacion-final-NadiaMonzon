@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import '../styles/App.scss';
 import '../styles/Reset.scss'
 import getDataApi from '../services/getDataApi';
+import ls from '../services/localStorage';
 import CharacterList from './CharacterList';
 import CharacterDetail from './CharacterDetail'
 import Filter from './Filters';
@@ -11,8 +12,8 @@ import { matchPath, Route, Routes, useLocation } from "react-router-dom";
 function App() {
 
   const [characterData, setCharacterData] = useState([])
-  const [filterByName, setFilterByName] = useState('')
-  const [filterByHouse, setFilterByHouse] =useState('Gryffindor')
+  const [filterByName, setFilterByName] = useState(ls.get('data',{}).filterByName || '')
+  const [filterByHouse, setFilterByHouse] =useState(ls.get('data', {}).filterByHouse || 'Gryffindor')
 
   useEffect(()=>{
     getDataApi()
@@ -21,6 +22,13 @@ function App() {
       setCharacterData(dataFromApi)
     });
   }, [])
+
+  useEffect(()=>{
+    ls.set('data',{
+      filterByName: filterByName,
+      filterByHouse: filterByHouse,
+    })
+  }, [filterByName, filterByHouse])
 
     const handleFilterHouse=(value)=>{
       setFilterByHouse(value)

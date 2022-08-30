@@ -2,7 +2,7 @@ const NameFilter=(props)=>{
     const handleSearch=(ev)=>{
         props.handleFilterName(ev.target.value)
     }
-    const noPressEnter = (ev) => {
+    const disableEnterKey = (ev) => {
         if (ev.keyCode === 13) {
             ev.preventDefault();
         }
@@ -11,11 +11,8 @@ const NameFilter=(props)=>{
     return (
         <>
         <label htmlFor=""> Write and search for your favourite character</label>
-        <input type="text" placeholder="Ej: Hermione Granger" value={props.filterByName} onChange={handleSearch} onKeyDown={noPressEnter}/>
+        <input type="text" placeholder="Ej: Hermione Granger" value={props.filterByName} onChange={handleSearch} onKeyDown={disableEnterKey}/>
         </>
-        
-
-
     )
 }
 

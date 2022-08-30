@@ -18,7 +18,6 @@ function App() {
   useEffect(()=>{
     getDataApi()
     .then((dataFromApi)=>{
-      console.log(dataFromApi);
       setCharacterData(dataFromApi)
     });
   }, [])

@@ -11,6 +11,7 @@ const getDataApi = () =>{
                 alive: character.alive,
                 image: character.image,
                 othername: character.alternate_names,
+                student: character.hogwartsStudent,
                 id: index,
             }
             

@@ -14,6 +14,8 @@ function App() {
   const [characterData, setCharacterData] = useState([])
   const [filterByName, setFilterByName] = useState(ls.get('data',{}).filterByName || '')
   const [filterByHouse, setFilterByHouse] =useState(ls.get('data', {}).filterByHouse || 'Gryffindor')
+  const [filterByStudent, setFilterByStudent] = useState(true)
+  
 
   useEffect(()=>{
     getDataApi()
@@ -28,6 +30,10 @@ function App() {
       filterByHouse: filterByHouse,
     })
   }, [filterByName, filterByHouse])
+
+  const handleFilterStudent =(value)=>{
+    setFilterByStudent(value)
+  }
 
     const handleFilterHouse=(value)=>{
       setFilterByHouse(value)
@@ -44,6 +50,9 @@ function App() {
     })
     .filter((character)=>{
       return character.name.toLocaleUpperCase().includes(filterByName.toLocaleUpperCase())
+    })
+    .filter((character)=>{
+      return filterByStudent ? character.student : character.student === false
     });
 
     //obtener id del personaje
@@ -70,6 +79,9 @@ function App() {
             
             filterByName={filterByName}
             handleFilterName={handleFilterName}
+
+            filterByStudent={filterByStudent}
+            handleFilterStudent={handleFilterStudent}
             />
 
             <CharacterList character={characterFilters} filterByName={filterByName}/>

@@ -1,5 +1,6 @@
 import NameFilter from './NameFilter';
 import HouseFilter from './HouseFilter';
+import StudentFilter from './StudentFilter';
 
 const Filter =(props)=>{
     return (
@@ -10,6 +11,9 @@ const Filter =(props)=>{
           <HouseFilter 
           filterByHouse={props.filterByHouse} 
           handleFilterHouse={props.handleFilterHouse}/>
+          <StudentFilter
+          filterByStudent={props.filterByStudent}
+          handleFilterStudent={props.handleFilterStudent}/>
         </form>
     )
 }

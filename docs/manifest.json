@@ -1,0 +1,8 @@
+{
+  "short_name": "Evaluación final",
+  "name": "Evaluación final módulo 3",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

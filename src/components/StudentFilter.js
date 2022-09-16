@@ -4,7 +4,6 @@ const StudentFilter =(props)=>{
         props.handleFilterStudent(ev.target.checked);
     }
 
-
     return(
         <>
 
@@ -15,9 +14,7 @@ const StudentFilter =(props)=>{
         onClick={handleFilterStudent}/>
 
         </>
-        
     )
-
 }
 
 export default StudentFilter;
